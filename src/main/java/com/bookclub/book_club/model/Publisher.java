@@ -11,7 +11,6 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Publisher {
 
@@ -23,4 +22,8 @@ public class Publisher {
 
     @OneToMany(mappedBy = "publisher")
     private List<Book> books;
+
+    public Publisher(String name) {
+        this.name = name;
+    }
 }

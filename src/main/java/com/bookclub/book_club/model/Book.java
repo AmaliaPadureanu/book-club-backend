@@ -1,7 +1,6 @@
 package com.bookclub.book_club.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +12,6 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Book {
     @Id
@@ -50,4 +48,20 @@ public class Book {
     private Language language;
 
     private LocalDate publicationDate;
+
+    public Book(Category category, List<Author> authors, String title, int numberOfPages,
+                String description, Publisher publisher, BigDecimal price, AvailabilityStatus availabilityStatus, int inventory,
+                Language language, LocalDate publicationDate) {
+    this.category = category;
+    this.authors = authors;
+    this.title = title;
+    this.numberOfPages = numberOfPages;
+    this.description = description;
+    this.publisher = publisher;
+    this.price = price;
+    this.availabilityStatus = availabilityStatus;
+    this.inventory = inventory;
+    this.language = language;
+    this.publicationDate = publicationDate;
+    }
 }
